@@ -1,0 +1,29 @@
+{
+  "name": "poolchia-helperbot",
+  "version": "1.0.0",
+  "description": "PoolChia Discord helper bot",
+  "main": "infobot.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha --recursive test",
+    "lint": "eslint ."
+  },
+  "keywords": [
+    "infobot"
+  ],
+  "author": "Misha Nasledov <misha@nasledov.com>",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "ioredis": "^4.26.0",
+    "js-base64": "^2.5.2",
+    "js-yaml": "^3.14.0",
+    "loglevel": "^1.6.8"
+  },
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jsdoc": "^27.1.0",
+    "mocha": "^8.0.1"
+  }
+}
