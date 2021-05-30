@@ -1,0 +1,8 @@
+discord:
+  token: INSERT_TOKEN_HERE
+brain:
+  backend: redis
+  redis:
+    host: 127.0.0.1
+    port: 6379
+logLevel: debug

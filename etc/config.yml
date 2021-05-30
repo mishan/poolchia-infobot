@@ -1,0 +1,8 @@
+discord:
+  token: ODQ4NDMxMDM2NTcyMjM3ODM0.YLMg-g.xeRrNBr2uTkTtMXQLIXTOcPrOwM
+brain:
+  backend: redis
+  redis:
+    host: 127.0.0.1
+    port: 6379
+logLevel: debug
