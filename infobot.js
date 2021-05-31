@@ -25,16 +25,23 @@ client.on('message', async (msg) => {
   const { mentionId, message } = Util.parseMessage(msg.content);
   // they're addressing us!
   if (mentionId === client.user.id) {
-    // they are teaching us something
-    const matches = message.match(/^(([\w\d]+)\s)+(is|are)\s(.+)$/);
-    log.debug(`matches = ${matches}`);
-    if (matches && matches.length > 0) {
+    // check if it matches an is or are structure
+    let subject;
+    let predicate;
+    let verb;
+    if (message.indexOf(' is ') > 0) {
+      ([subject, predicate] = message.split(' is '));
+      verb = 'is';
+    } else if (message.indexOf(' are ') > 0) {
+      ([subject, predicate] = message.split(' are '));
+      verb = 'are';
+    }
+    if (subject && predicate) {
       const hasLearnRole = LEARN_ROLES.find((r) => roles.cache.has(r));
 
       if (hasLearnRole) {
-        const [,,subj, verb, pred] = matches;
-        log.debug(`setting ${subj}, ${verb}, ${pred}`);
-        await brain.learn(subj, pred, verb);
+        log.debug(`setting ${subject}, ${verb}, ${predicate}`);
+        await brain.learn(subject, predicate, verb);
       }
 
       // TODO: acknowledge?
