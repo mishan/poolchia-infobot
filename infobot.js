@@ -23,8 +23,8 @@ client.on('message', async (msg) => {
   const { member: { roles } } = msg;
   // TODO: handle private message
   const { mentionId, message } = Util.parseMessage(msg.content);
-  // they're addressing us!
-  if (mentionId === client.user.id) {
+  // they're addressing us! (or addressing mode is disabled)
+  if (!config.brain.addressing || mentionId === client.user.id) {
     // check if it matches an is or are structure
     let subject;
     let predicate;

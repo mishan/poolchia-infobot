@@ -1,6 +1,7 @@
 discord:
   token: INSERT_TOKEN_HERE
 brain:
+  addressing: true
   backend: redis
   redis:
     host: 127.0.0.1
