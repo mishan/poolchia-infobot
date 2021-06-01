@@ -68,5 +68,13 @@ describe('Util', () => {
         message: 'good idea',
       });
     });
+    it('returns null message if no message (just mention)', () => {
+      const parsedMsg = Util.parseMessage('<@123>');
+
+      assert.deepStrictEqual(parsedMsg, {
+        mentionId: '123',
+        message: undefined,
+      });
+    });
   });
 });
