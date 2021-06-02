@@ -2,6 +2,10 @@ discord:
   token: INSERT_TOKEN_HERE
 brain:
   addressing: true
+  learning:
+    enabled: true
+    restricted: false
+    roles: []
   backend: redis
   redis:
     host: 127.0.0.1
